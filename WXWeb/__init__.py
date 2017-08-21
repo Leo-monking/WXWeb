@@ -2,12 +2,12 @@
 import sys
 sys.path.append('utils')
 import urllib
-import Basic
-import Menu
+import basic
+import menu
 
 
 wxMenu = Menu()
-basic = Basic()
-accessToken = basic.get_access_token()
+wxBasic = Basic()
+accessToken = wxBasic.get_access_token()
 #myMenu.delete(accessToken)
-wxMenu.create(basic.menuJson, accessToken)
+wxMenu.create(wxBasic.menuJson, accessToken)
