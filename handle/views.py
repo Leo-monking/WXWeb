@@ -44,7 +44,7 @@ def index(request):
      				replyMsg = reply.ImageMsg(toUser, fromUser, mediaId)
      				return HttpResponse(replyMsg.send())
 				if msgType == "voice":
-					content = u"Welcome to monking`s house!But,What are you ÅªÉ¶àÏ,Ìý²»¶®£¡"
+					content = u"Welcome to monking`s house!But,What are you nong sha le , ting budong !"
 					replyMsg = reply.TextMsg(toUser, fromUser, content)
 					return HttpResponse(replyMsg.send())
               	else:
