@@ -35,7 +35,6 @@ def index(request):
      			toUser = recMsg.FromUserName
      			fromUser = recMsg.ToUserName
      			msgType = recMsg.MsgType
-				print "msgType==>>",msgType
      			if msgType == 'text':
      				content = "Welcome to monking`s house!"
      				replyMsg = reply.TextMsg(toUser, fromUser, content)
