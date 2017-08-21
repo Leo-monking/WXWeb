@@ -1,3 +1,12 @@
+# -*- coding: utf-8 -*-
+'''
+    Created on 2017-8-20
+    @author: MONKING
+    
+    内容描述：
+    	定义访问WXWeb的URL匹配模式
+'''
+
 from django.conf.urls import url
 from django.contrib import admin
 from learn import views as learn_views

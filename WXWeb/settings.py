@@ -27,7 +27,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'learn',
     'handle',
-    'basic',
     'media',
     'menu',
     'gtoken',

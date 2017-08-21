@@ -43,8 +43,10 @@ def index(request):
      				mediaId = recMsg.MediaId
      				replyMsg = reply.ImageMsg(toUser, fromUser, mediaId)
      				return HttpResponse(replyMsg.send())
-			if msgType == "voice":
-				return ""
+				if msgType == "voice":
+					content = u"Welcome to monking`s house!But,What are you ÅªÉ¶àÏ,Ìý²»¶®£¡"
+					replyMsg = reply.TextMsg(toUser, fromUser, content)
+					return HttpResponse(replyMsg.send())
               	else:
                   		return HttpResponse(reply.Msg().send())
 	except Exception, Argment:

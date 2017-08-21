@@ -1,5 +1,13 @@
 # -*- coding: utf-8 -*-
-# filename: receive.py
+'''
+    Created on 2017-8-20
+    filename: receive.py
+    @author: MONKING
+    
+    内容描述：
+    消息分类，分析关键参数
+'''
+
 import xml.etree.ElementTree as ET
 
 def parse_xml(web_data):
