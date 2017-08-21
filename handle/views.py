@@ -31,23 +31,23 @@ def index(request):
 			webData = str(request.body)
 			print "handle/view.py	webData===>>>",webData
      		recMsg = receive.parse_xml(webData)
-   			toUser = recMsg.FromUserName
-   			fromUser = recMsg.ToUserName
-   			msgType = recMsg.MsgType
-   			if msgType == 'text':
-   				content = "Welcome to monking`s house!"
-   				replyMsg = reply.TextMsg(toUser, fromUser, content)
-   				return HttpResponse(replyMsg.send())
-   			if msgType == 'image':
-   				mediaId = recMsg.MediaId
-   				replyMsg = reply.ImageMsg(toUser, fromUser, mediaId)
-   				return HttpResponse(replyMsg.send())
-			if msgType == "voice":
-				content = u"Welcome to monking`s house!But,What are you nong sha le , ting budong !"
-				replyMsg = reply.TextMsg(toUser, fromUser, content)
-				return HttpResponse(replyMsg.send())
+     		toUser = recMsg.FromUserName
+     		fromUser = recMsg.ToUserName
+     		msgType = recMsg.MsgType
+     		if msgType == 'text':
+     			content = "Welcome to monking`s house!"
+     			replyMsg = reply.TextMsg(toUser, fromUser, content)
+     			return HttpResponse(replyMsg.send())
+     		if msgType == 'image':
+     			mediaId = recMsg.MediaId
+     			replyMsg = reply.ImageMsg(toUser, fromUser, mediaId)
+     			return HttpResponse(replyMsg.send())
+     		if msgType == "voice":
+     			content = "Welcome to monking`s house!But,What are you nong sha le , ting budong !"
+     			replyMsg = reply.TextMsg(toUser, fromUser, content)
+     			return HttpResponse(replyMsg.send())
           	else:
-              		return HttpResponse(reply.Msg().send())
+          		return HttpResponse(reply.Msg().send())
 	except Exception, Argment:
 		print Argment 
 		return HttpResponse(Argment)
