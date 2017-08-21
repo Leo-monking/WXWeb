@@ -8,6 +8,6 @@ import menu
 
 wxMenu = menu.Menu()
 wxBasic = basic.Basic()
-accessToken = wxBasic.get_access_token()
+accessToken = wxBasic.get_access_token("","")
 #myMenu.delete(accessToken)
 wxMenu.create(wxBasic.menuJson, accessToken)
