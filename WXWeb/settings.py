@@ -27,9 +27,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'learn',
     'handle',
-    'media',
-    'menu',
-    'gtoken',
 ]
 
 MIDDLEWARE = [
