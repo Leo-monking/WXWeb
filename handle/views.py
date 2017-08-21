@@ -30,24 +30,24 @@ def index(request):
 		if requestMethod == 'POST':
 			webData = str(request.body)
 			print "handle/view.py	webData===>>>",webData
-	     		recMsg = receive.parse_xml(webData)
-	     		if isinstance(recMsg, receive.Msg):
-	     			toUser = recMsg.FromUserName
-	     			fromUser = recMsg.ToUserName
-	     			msgType = recMsg.MsgType
+     		recMsg = receive.parse_xml(webData)
+     		if isinstance(recMsg, receive.Msg):
+     			toUser = recMsg.FromUserName
+     			fromUser = recMsg.ToUserName
+     			msgType = recMsg.MsgType
 				print "msgType==>>",msgType
-	     			if msgType == 'text':
-	     				content = "Welcome to monking`s house!"
-	     				replyMsg = reply.TextMsg(toUser, fromUser, content)
-	     				return HttpResponse(replyMsg.send())
-	     			if msgType == 'image':
-	     				mediaId = recMsg.MediaId
-	     				replyMsg = reply.ImageMsg(toUser, fromUser, mediaId)
-	     				return HttpResponse(replyMsg.send())
-				if msgType == "voice":
-					return ""
-                	else:
-                    		return HttpResponse(reply.Msg().send())
+     			if msgType == 'text':
+     				content = "Welcome to monking`s house!"
+     				replyMsg = reply.TextMsg(toUser, fromUser, content)
+     				return HttpResponse(replyMsg.send())
+     			if msgType == 'image':
+     				mediaId = recMsg.MediaId
+     				replyMsg = reply.ImageMsg(toUser, fromUser, mediaId)
+     				return HttpResponse(replyMsg.send())
+			if msgType == "voice":
+				return ""
+              	else:
+                  		return HttpResponse(reply.Msg().send())
 	except Exception, Argment:
 		print Argment 
 		return HttpResponse(Argment)
