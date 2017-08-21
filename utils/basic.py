@@ -26,6 +26,7 @@ class Basic():
 		print "access_token get:",postUrl
 		urlResp = urllib.urlopen(postUrl)
 		rspRet = urlResp.read()
+		print "get access_token ret:",rspRet
 		urlResp = json.loads(rspRet)
 		if "access_token" in urlResp.keys():
 			self.__accessToken = urlResp['access_token']
