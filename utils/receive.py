@@ -17,8 +17,12 @@ def parse_xml(web_data):
 	msg_type = root.find('MsgType').text
 	if msg_type == 'text':
 		return TextMsg(root)
-	elif msg_type == 'image':
+	if msg_type == 'image':
 		return ImageMsg(root)
+	if msg_type == 'voice':
+		return VoiceMsg(root)
+	if msg_type == 'location':
+		return LocationMsg(root)
 
 class Msg(object):
 	def __init__(self, xmlData):
