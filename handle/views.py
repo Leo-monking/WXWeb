@@ -37,19 +37,23 @@ def index(request):
      		if msgType == 'text':
      			content = "Welcome to monking`s house!"
      			replyMsg = reply.TextMsg(toUser, fromUser, content)
-     			return HttpResponse(replyMsg.send())
+     			retMsg = replyMsg.send()
+     			return HttpResponse(retMsg)
      		if msgType == 'image':
      			mediaId = recMsg.MediaId
      			replyMsg = reply.ImageMsg(toUser, fromUser, mediaId)
-     			return HttpResponse(replyMsg.send())
+     			retMsg = replyMsg.send()
+     			return HttpResponse(retMsg)
      		if msgType == "voice":
      			content = "Welcome to monking`s house!But,What are you nong sha le , ting budong !"
-     			replyMsg = reply.TextMsg(toUser, fromUser, content)
-     			return HttpResponse(replyMsg.send())
+     			replyMsg = reply.TextMsg(toUser, fromUser, recMsg.Format)
+     			retMsg = replyMsg.send()
+     			return HttpResponse(retMsg)
      		if msgType == "location":
      			content = "Welcome to monking`s house!But,What are you nong sha le!\nshushu,shushu,buyue buyue !"
-     			replyMsg = reply.LocationMsg(toUser, fromUser, recMsg.Location_X,recMsg.Location_Y,recMsg.Scale,recMsg.Lable)
-     			return HttpResponse(replyMsg.send())
+     			replyMsg = reply.LocationMsg(toUser, fromUser, recMsg.Location_X,recMsg.Location_Y,recMsg.Scale,recMsg.Label)
+     			retMsg = replyMsg.send()
+     			return HttpResponse(retMsg)
           	else:
           		return HttpResponse(reply.Msg().send())
 	except Exception, Argment:
