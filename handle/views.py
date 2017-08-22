@@ -59,7 +59,7 @@ def index(request):
      		if msgType == "location":
      			#content = u"Welcome to monking`s house!But,What are you ≈™…∂‡œ!\n Â Â£¨ Â Â£¨Œ“≤ª‘º !"
      			#content = (content.decoding("asscii")).encoding("utf-8")
-     			content = "Welcome to monking`s house!But,What are you doing ?\nWelcome to "+recMsg.Label
+     			content = "Welcome to monking`s house!But,What are you doing ?\nWelcome to "+recMsg.Label.encode("utf-8")
      			print content
      			#replyMsg = reply.LocationMsg(toUser, fromUser, recMsg.Location_X,recMsg.Location_Y,recMsg.Scale,recMsg.Label)
      			#retMsg = replyMsg.send()
