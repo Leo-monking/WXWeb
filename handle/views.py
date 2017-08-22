@@ -27,7 +27,8 @@ def index(request):
 				return HttpResponse("")
 			
 		if requestMethod == 'POST':
-     		recMsg = receive.parse_xml(str(request.body))
+			webData = str(request.body)
+     		recMsg = receive.parse_xml(webData)
      		toUser = recMsg.FromUserName
      		fromUser = recMsg.ToUserName
      		msgType = recMsg.MsgType
