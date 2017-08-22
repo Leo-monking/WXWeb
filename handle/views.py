@@ -47,7 +47,7 @@ def index(request):
      		if msgType == "voice":
      			content = "Welcome to monking`s house!But,What are you nong sha le , ting budong !"
      			print content
-     			replyMsg = reply.VoiceMsg(toUser, fromUser, recMsg.Format)
+     			replyMsg = reply.VoiceMsg(toUser, fromUser, recMsg.mediaId,recMsg.Format)
      			retMsg = replyMsg.send()
      			print retMsg
      			return HttpResponse(retMsg)

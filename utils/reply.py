@@ -87,6 +87,7 @@ class VoiceMsg(Msg):
         self.__dict['ToUserName'] = toUserName
         self.__dict['FromUserName'] = fromUserName
         self.__dict['CreateTime'] = int(time.time())
+        self.__dict['MediaId'] = mediaId
         self.__dict['Format'] = format
     def send(self):
         XmlForm = '''
