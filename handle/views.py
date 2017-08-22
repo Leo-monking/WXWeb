@@ -6,10 +6,10 @@ from django.http import HttpResponse
 import receive
 import reply
 import hashlib
-import sys
+#import sys
 
-reload(sys)
-sys.setdefaultencoding("utf-8")
+#reload(sys)
+#sys.setdefaultencoding("utf-8")
 def index(request):
 	requestMethod = request.method
 	try:
@@ -49,7 +49,8 @@ def index(request):
      			print retMsg
      			return HttpResponse(retMsg)
      		if msgType == "voice":
-     			content = u"Welcome to monking`s house!But,What are you ≈™…∂‡œ , Ã˝≤ª∂Æ !"
+     			#content = u"Welcome to monking`s house!But,What are you ≈™…∂‡œ , Ã˝≤ª∂Æ !"
+     			content = u"Welcome to monking`s house!But,What are you nong sha le ! ting bu dong !"
      			print content
      			replyMsg = reply.VoiceMsg(toUser, fromUser, recMsg.MediaId,recMsg.Format)
      			retMsg = replyMsg.send()
@@ -57,6 +58,7 @@ def index(request):
      			return HttpResponse(retMsg)
      		if msgType == "location":
      			content = u"Welcome to monking`s house!But,What are you ≈™…∂‡œ!\n Â Â£¨ Â Â£¨Œ“≤ª‘º !"
+     			content = (content.decoding("asscii")).encoding("utf-8")
      			print content
      			#replyMsg = reply.LocationMsg(toUser, fromUser, recMsg.Location_X,recMsg.Location_Y,recMsg.Scale,recMsg.Label)
      			#retMsg = replyMsg.send()
