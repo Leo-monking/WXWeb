@@ -21,7 +21,6 @@ def index(request):
 			sha1 = hashlib.sha1()
 			map(sha1.update, list)
 			hashcode = sha1.hexdigest()
-			print "Handle/GET func: hashcode, signature: ", hashcode, signature
 			if hashcode == signature:
 				return HttpResponse(echostr, content_type="text/plain")
 			else:
@@ -31,7 +30,9 @@ def index(request):
 			webData = str(request.body)
 			print "handle/view.py	webData===>>>",webData
      		recMsg = receive.parse_xml(webData)
+     		print "get FromUserName"
      		toUser = recMsg.FromUserName
+     		print "get ToUserName"
      		fromUser = recMsg.ToUserName
      		msgType = recMsg.MsgType
      		if msgType == 'text':
@@ -48,12 +49,14 @@ def index(request):
      			return HttpResponse(retMsg)
      		if msgType == "voice":
      			content = "Welcome to monking`s house!But,What are you nong sha le , ting budong !"
+     			print content
      			replyMsg = reply.TextMsg(toUser, fromUser, recMsg.Format)
      			retMsg = replyMsg.send()
      			print retMsg
      			return HttpResponse(retMsg)
      		if msgType == "location":
      			content = "Welcome to monking`s house!But,What are you nong sha le!\nshushu,shushu,buyue buyue !"
+     			print content
      			replyMsg = reply.LocationMsg(toUser, fromUser, recMsg.Location_X,recMsg.Location_Y,recMsg.Scale,recMsg.Label)
      			retMsg = replyMsg.send()
      			print retMsg
