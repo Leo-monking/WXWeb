@@ -52,7 +52,7 @@ class VoiceMsg(Msg):
 class LocationMsg(Msg):
 	def __init__(self, xmlData):
 		Msg.__init__(self, xmlData)
-		self.Location_X = xmlData.find('Location_X').text
-		self.Location_Y = xmlData.find('Location_Y').text
-		self.Scale = xmlData.find('Scale').text
+		self.Location_X = xmlData.find('Location_X')
+		self.Location_Y = xmlData.find('Location_Y')
+		self.Scale = xmlData.find('Scale')
 		self.Label = xmlData.find('Label').text

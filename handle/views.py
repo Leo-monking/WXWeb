@@ -28,6 +28,7 @@ def index(request):
 			
 		if requestMethod == 'POST':
 			webData = str(request.body)
+			print webData
      		recMsg = receive.parse_xml(webData)
      		toUser = recMsg.FromUserName
      		fromUser = recMsg.ToUserName

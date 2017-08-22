@@ -57,7 +57,7 @@ class ImageMsg(Msg):
         return XmlForm.format(**self.__dict)
 
 class LocationMsg(Msg):
-    def __init__(self, toUserName, fromUserName, locationX, locationY,scale, label):
+    def __init__(self, toUserName, fromUserName, locationX, locationY, scale, label):
         self.__dict = dict()
         self.__dict['ToUserName'] = toUserName
         self.__dict['FromUserName'] = fromUserName
