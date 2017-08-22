@@ -27,12 +27,8 @@ def index(request):
 				return HttpResponse("")
 			
 		if requestMethod == 'POST':
-			webData = str(request.body)
-			print "handle/view.py	webData===>>>",webData
-     		recMsg = receive.parse_xml(webData)
-     		print "get FromUserName"
+     		recMsg = receive.parse_xml(str(request.body))
      		toUser = recMsg.FromUserName
-     		print "get ToUserName"
      		fromUser = recMsg.ToUserName
      		msgType = recMsg.MsgType
      		if msgType == 'text':
@@ -50,7 +46,7 @@ def index(request):
      		if msgType == "voice":
      			content = "Welcome to monking`s house!But,What are you nong sha le , ting budong !"
      			print content
-     			replyMsg = reply.TextMsg(toUser, fromUser, recMsg.Format)
+     			replyMsg = reply.VoiceMsg(toUser, fromUser, recMsg.Format)
      			retMsg = replyMsg.send()
      			print retMsg
      			return HttpResponse(retMsg)
