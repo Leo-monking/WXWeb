@@ -38,3 +38,17 @@ class ImageMsg(Msg):
 		Msg.__init__(self, xmlData)
 		self.PicUrl = xmlData.find('PicUrl').text
 		self.MediaId = xmlData.find('MediaId').text
+		
+class VoiceMsg(Msg):
+	def __init__(self, xmlData):
+		Msg.__init__(self, xmlData)
+		self.MediaId = xmlData.find('MediaId').text
+		self.Format = xmlData.find('Format').text
+
+class LocationMsg(Msg):
+	def __init__(self, xmlData):
+		Msg.__init__(self, xmlData)
+		self.Location_X = xmlData.find('Location_X').text
+		self.Location_Y = xmlData.find('Location_Y').text
+		self.Scale = xmlData.find('Scale').text
+		self.Label = xmlData.find('Label').text

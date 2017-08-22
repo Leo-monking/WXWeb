@@ -46,6 +46,10 @@ def index(request):
      			content = "Welcome to monking`s house!But,What are you nong sha le , ting budong !"
      			replyMsg = reply.TextMsg(toUser, fromUser, content)
      			return HttpResponse(replyMsg.send())
+     		if msgType == "location":
+     			content = "Welcome to monking`s house!But,What are you nong sha le!\nshushu,shushu,buyue buyue !"
+     			replyMsg = reply.LocationMsg(toUser, fromUser, recMsg.Location_X,recMsg.Location_Y,recMsg.Scale,recMsg.Lable)
+     			return HttpResponse(replyMsg.send())
           	else:
           		return HttpResponse(reply.Msg().send())
 	except Exception, Argment:

@@ -55,3 +55,50 @@ class ImageMsg(Msg):
         </xml>
         '''
         return XmlForm.format(**self.__dict)
+
+class LocationMsg(Msg):
+    def __init__(self, toUserName, fromUserName, locationX, locationY,scale, label):
+        self.__dict = dict()
+        self.__dict['ToUserName'] = toUserName
+        self.__dict['FromUserName'] = fromUserName
+        self.__dict['CreateTime'] = int(time.time())
+        self.__dict['Location_X'] = locationX
+        self.__dict['Location_Y'] = locationY
+        self.__dict['Scale'] = scale
+        self.__dict['Label'] = label
+    def send(self):
+        XmlForm = '''
+        <xml>
+        <ToUserName><![CDATA[{ToUserName}]]></ToUserName>
+        <FromUserName><![CDATA[{FromUserName}]]></FromUserName>
+        <CreateTime>{CreateTime}</CreateTime>
+        <MsgType><![CDATA[location]]></MsgType>
+		<Location_X>{locationX}</Location_X>
+		<Location_Y>{locationY}</Location_Y>
+		<Scale>{Scale}</Scale>
+		<Label><![CDATA[{label}]]></Label>
+        </xml>
+        '''
+        return XmlForm.format(**self.__dict)
+        
+class VoiceMsg(Msg):
+    def __init__(self, toUserName, fromUserName, mediaId, format):
+        self.__dict = dict()
+        self.__dict['ToUserName'] = toUserName
+        self.__dict['FromUserName'] = fromUserName
+        self.__dict['CreateTime'] = int(time.time())
+        self.__dict['Format'] = format
+    def send(self):
+        XmlForm = '''
+        <xml>
+        <ToUserName><![CDATA[{ToUserName}]]></ToUserName>
+        <FromUserName><![CDATA[{FromUserName}]]></FromUserName>
+        <CreateTime>{CreateTime}</CreateTime>
+        <MsgType><![CDATA[voice]]></MsgType>
+        <Voice>
+        <MediaId><![CDATA[{MediaId}]]></MediaId>
+        <Format><![CDATA[{Format}]]></Format>
+        </Voice>
+        </xml>
+        '''
+        return XmlForm.format(**self.__dict)
