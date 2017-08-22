@@ -38,7 +38,7 @@ def index(request):
      		msgType = recMsg.MsgType
      		if msgType == 'text':
      			content = "Welcome to monking`s house!"
-     			replyMsg = reply.TextMsg(toUser, fromUser, content)
+     			replyMsg = reply.TextMsg(toUser, fromUser, recMsg.Content)
      			retMsg = replyMsg.send()
      			print retMsg
      			return HttpResponse(retMsg)
@@ -57,8 +57,9 @@ def index(request):
      			print retMsg
      			return HttpResponse(retMsg)
      		if msgType == "location":
-     			content = u"Welcome to monking`s house!But,What are you ≈™…∂‡œ!\n Â Â£¨ Â Â£¨Œ“≤ª‘º !"
-     			content = (content.decoding("asscii")).encoding("utf-8")
+     			#content = u"Welcome to monking`s house!But,What are you ≈™…∂‡œ!\n Â Â£¨ Â Â£¨Œ“≤ª‘º !"
+     			#content = (content.decoding("asscii")).encoding("utf-8")
+     			content = "Welcome to monking`s house!But,What are you doing ?"
      			print content
      			#replyMsg = reply.LocationMsg(toUser, fromUser, recMsg.Location_X,recMsg.Location_Y,recMsg.Scale,recMsg.Label)
      			#retMsg = replyMsg.send()
