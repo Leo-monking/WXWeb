@@ -20,7 +20,9 @@ def GetResponseByTuLing(msg):
     }
     try:
         r = requests.post(apiUrl, data=data).json()
-        return r.get('text')
+        msg = r.get('text')
+        print msg
+        return msg
     except:
         return
 
@@ -36,6 +38,7 @@ class TextMsg(Msg):
         self.__dict['ToUserName'] = toUserName
         self.__dict['FromUserName'] = fromUserName
         self.__dict['CreateTime'] = int(time.time())
+        print content
         self.__dict['Content'] = GetResponseByTuLing(content).encode("utf-8")
 
     def send(self):
