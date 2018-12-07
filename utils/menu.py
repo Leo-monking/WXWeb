@@ -10,101 +10,103 @@
 
 import urllib
 from basic import Basic
+
+
 menuJson = '''
-    {
-        "button":
-        [
-            {
-                "name": "微金融",
-                "sub_button":
-                [
-                    {
-                        "type": "click",
-                        "name": "账户信息即时通",
-                        "key":  "mpGuide01"
-                    },
-                    {
-                        "type": "click",
-                        "name": "云管家",
-                        "key":  "mpGuide02"
-                    },
-                    {
-                        "type": "click",
-                        "name": "我的账户",
-                        "key":  "mpGuide03"
-                    },
-                    {
-                        "type": "click",
-                        "name": "我要开户",
-                        "key":  "mpGuide04"
-                    }
-                ]
-            },
-            {
-                "name": "悦理财",
-                "sub_button":
-                [
-                    {
-                        "type": "click",
-                        "name": "直销银行",
-                        "key":  "mpGuide05"
-                    },
-                    {
-                        "type": "click",
-                        "name": "理财超市",
-                        "key":  "mpGuide06"
-                    },
-                    {
-                        "type": "click",
-                        "name": "信用卡服务",
-                        "key":  "mpGuide07"
-                    },
-                    {
-                        "type": "click",
-                        "name": "优房闪贷",
-                        "key":  "mpGuide08"
-                    },
-                    {
-                        "type": "click",
-                        "name": "手机银行下载",
-                        "key":  "mpGuide09"
-                    }
-                ]
-            },
-            {
-                "name": "慧生活",
-                "sub_button":
-                [
-                    {
-                        "type": "click",
-                        "name": "智能客服",
-                        "key":  "mpGuide10"
-                    },
-                    {
-                        "type": "click",
-                        "name": "网点服务",
-                        "key":  "mpGuide11"
-                    },
-                    {
-                        "type": "click",
-                        "name": "推荐有奖",
-                        "key":  "mpGuide12"
-                    },
-                    {
-                        "type": "click",
-                        "name": "话费重置",
-                        "key":  "mpGuide13"
-                    },
-                    {
-                        "type": "click",
-                        "name": "天天特惠",
-                        "key":  "mpGuide14"
-                    }
-                ]
-            }
-        ]
-    }
-    '''
+{
+    "button":
+    [
+        {
+            "name":"微金融",
+            "sub_button":
+            [
+                {
+                    "type":"click",
+                    "name":"账户信息即时通",
+                    "key":"V1001_ALERT"
+                },
+                {
+                    "type":"click",
+                    "name":"云管家",
+                    "key":"V1001_HELP"
+                },
+                {
+                    "type":"click",
+                    "name":"我的账户",
+                    "key":"V1001_HELP"
+                },
+                {
+                    "type":"click",
+                    "name":"我要开户",
+                    "key":"V1001_HELP"
+                }
+            ]
+        },
+        {
+            "name":"悦理财",
+            "sub_button":
+            [
+                {
+                    "type":"view",
+                    "name":"直销银行",
+                    "url":"http://www.systex.com.tw/"
+                },
+                {
+                    "type":"view",
+                    "name":"理财超市",
+                    "url":"http://www.splunk.com/"
+                },
+                {
+                    "type":"view",
+                    "name":"信用卡服务",
+                    "url":"http://www.splunklab.com/"
+                },
+                {
+                    "type":"view",
+                    "name":"优房闪贷",
+                    "url":"http://www.splunklab.com/"
+                },
+                {
+                    "type":"view",
+                    "name":"手机银行下载",
+                    "url":"http://www.splunklab.com/"
+                }
+            ]
+        },
+        {
+            "name":"慧生活",
+            "sub_button":
+            [
+                {
+                    "type":"click",
+                    "name":"智能客服",
+                    "key":"V1001_SYSTEX"
+                },
+                {
+                    "type":"click",
+                    "name":"网点服务",
+                    "key":"V1001_huabei"
+                },
+                {
+                    "type":"click",
+                    "name":"推荐有奖",
+                    "key":"V1001_huadong"
+                },
+                {
+                    "type":"click",
+                    "name":"话费重置",
+                    "key":"V1001_huanan"
+                },
+                {
+                    "type":"click",
+                    "name":"天天特惠",
+                    "key":"V1001_hongkong"
+                }
+            ]
+        }
+    ]
+ }'''
+
 class Menu(object):
     def __init__(self):
         pass
