@@ -10,6 +10,20 @@
 
 import time
 
+TULING_KEY = '04f44290d4cf462aae8ac563ea7aac16'
+def GetResponseByTuLing(msg):
+    apiUrl = 'http://www.tuling123.com/openapi/api'
+    data = {
+        'key'    : TULING_KEY,
+        'info'   : msg,
+        'userid' : 'wechat-robot',
+    }
+    try:
+        r = requests.post(apiUrl, data=data).json()
+        return r.get('text')
+    except:
+        return
+
 class Msg(object):
     def __init__(self):
         pass
@@ -22,7 +36,7 @@ class TextMsg(Msg):
         self.__dict['ToUserName'] = toUserName
         self.__dict['FromUserName'] = fromUserName
         self.__dict['CreateTime'] = int(time.time())
-        self.__dict['Content'] = content
+        self.__dict['Content'] = GetResponseByTuLing(content)
 
     def send(self):
         XmlForm = '''

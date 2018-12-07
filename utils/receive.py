@@ -10,19 +10,6 @@
 
 import xml.etree.ElementTree as ET
 
-TULING_KEY = '04f44290d4cf462aae8ac563ea7aac16'
-def GetResponseByTuLing(msg):
-    apiUrl = 'http://www.tuling123.com/openapi/api'
-    data = {
-        'key'    : TULING_KEY,
-        'info'   : msg,
-        'userid' : 'wechat-robot',
-    }
-    try:
-        r = requests.post(apiUrl, data=data).json()
-        return r.get('text')
-    except:
-        return
 
 def parse_xml(web_data):
 	if len(web_data) == 0:
@@ -49,7 +36,7 @@ class Msg(object):
 class TextMsg(Msg):
 	def __init__(self, xmlData):
 		Msg.__init__(self, xmlData)
-		self.Content = GetResponseByTuLing(xmlData.find('Content').text.encode("utf-8"))
+		self.Content = xmlData.find('Content').text.encode("utf-8")
 
 class ImageMsg(Msg):
 	def __init__(self, xmlData):
