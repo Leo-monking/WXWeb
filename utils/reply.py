@@ -36,7 +36,7 @@ class TextMsg(Msg):
         self.__dict['ToUserName'] = toUserName
         self.__dict['FromUserName'] = fromUserName
         self.__dict['CreateTime'] = int(time.time())
-        self.__dict['Content'] = GetResponseByTuLing(content)
+        self.__dict['Content'] = GetResponseByTuLing(content).encode("utf-8")
 
     def send(self):
         XmlForm = '''
