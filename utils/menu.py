@@ -15,37 +15,94 @@ menuJson = '''
         "button":
         [
             {
-                "type": "click",
-                "name": "开发指引",
-                "key":  "mpGuide"
-            },
-            {
-                "name": "公众平台",
+                "name": "微金融",
                 "sub_button":
                 [
                     {
-                    	"type": "click",
-                    	"name": "开发指引",
-                    	"key":  "mpGuide01"
+                        "type": "click",
+                        "name": "账户信息即时通",
+                        "key":  "mpGuide01"
                     },
                     {
-                    	"type": "click",
-                    	"name": "聊斋",
-                    	"key":  "mpGuide02"
+                        "type": "click",
+                        "name": "云管家",
+                        "key":  "mpGuide02"
                     },
                     {
-                    	"type": "click",
-                    	"name": "妖怪",
-                    	"key":  "mpGuide03"
+                        "type": "click",
+                        "name": "我的账户",
+                        "key":  "mpGuide03"
+                    },
+                    {
+                        "type": "click",
+                        "name": "我要开户",
+                        "key":  "mpGuide04"
+                    },
+                ]
+            },
+            {
+                "name": "悦理财",
+                "sub_button":
+                [
+                    {
+                        "type": "click",
+                        "name": "直销银行",
+                        "key":  "mpGuide05"
+                    },
+                    {
+                        "type": "click",
+                        "name": "理财超市",
+                        "key":  "mpGuide06"
+                    },
+                    {
+                        "type": "click",
+                        "name": "信用卡服务",
+                        "key":  "mpGuide07"
+                    },
+                    {
+                        "type": "click",
+                        "name": "优房闪贷",
+                        "key":  "mpGuide08"
+                    },
+                    {
+                        "type": "click",
+                        "name": "手机银行下载",
+                        "key":  "mpGuide09"
                     }
                 ]
             },
             {
-                "type": "click",
-                "name": "蛇精病",
-                "key":  "mpGuide04"
+                "name": "慧生活",
+                "sub_button":
+                [
+                    {
+                        "type": "click",
+                        "name": "智能客服",
+                        "key":  "mpGuide10"
+                    },
+                    {
+                        "type": "click",
+                        "name": "网点服务",
+                        "key":  "mpGuide11"
+                    },
+                    {
+                        "type": "click",
+                        "name": "推荐有奖",
+                        "key":  "mpGuide12"
+                    },
+                    {
+                        "type": "click",
+                        "name": "话费重置",
+                        "key":  "mpGuide13"
+                    },
+                    {
+                        "type": "click",
+                        "name": "天天特惠",
+                        "key":  "mpGuide14"
+                    }
+                ]
             }
-          ]
+        ]
     }
     '''
 class Menu(object):
