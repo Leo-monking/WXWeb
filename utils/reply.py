@@ -8,7 +8,7 @@
     消息回复，消息类型主要包括text、image
 '''
 
-import time
+import time,requests
 
 
 def GetResponseByTuLing(msg):
