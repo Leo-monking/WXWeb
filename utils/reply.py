@@ -10,9 +10,10 @@
 
 import time
 
-TULING_KEY = '04f44290d4cf462aae8ac563ea7aac16'
+
 def GetResponseByTuLing(msg):
     apiUrl = 'http://www.tuling123.com/openapi/api'
+    TULING_KEY = '04f44290d4cf462aae8ac563ea7aac16'
     data = {
         'key'    : TULING_KEY,
         'info'   : msg,
@@ -24,7 +25,7 @@ def GetResponseByTuLing(msg):
         print "tuling said :\n" + msg.encode("utf-8")
         return msg.encode("utf-8")
     except:
-        return
+        return "tuling has error"
 
 class Msg(object):
     def __init__(self):
