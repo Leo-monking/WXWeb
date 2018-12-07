@@ -37,7 +37,7 @@ menuJson = '''
                         "type": "click",
                         "name": "我要开户",
                         "key":  "mpGuide04"
-                    },
+                    }
                 ]
             },
             {
