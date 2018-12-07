@@ -21,8 +21,8 @@ def GetResponseByTuLing(msg):
     try:
         r = requests.post(apiUrl, data=data).json()
         msg = r.get('text')
-        print msg
-        return msg
+        print msg.encode("utf-8")
+        return msg.encode("utf-8")
     except:
         return
 
@@ -39,7 +39,7 @@ class TextMsg(Msg):
         self.__dict['FromUserName'] = fromUserName
         self.__dict['CreateTime'] = int(time.time())
         print content
-        self.__dict['Content'] = GetResponseByTuLing(content).encode("utf-8")
+        self.__dict['Content'] = GetResponseByTuLing(content.encode("utf-8"))
 
     def send(self):
         XmlForm = '''
